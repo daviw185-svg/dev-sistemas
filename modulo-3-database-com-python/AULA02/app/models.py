@@ -22,5 +22,15 @@ class Cargo(Base):
     sal_max = Column(Float, nullable=False)
     ativo = Column(Boolean, default=True)
 
+class Funcionario(Base):
+    __tablename__ = 'funcionarios'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nome = Column(String(100), nullable=False)
+    email = Column(String(100), nullable=False)
+    telefone = Column(String(15), nullable=False)
+    salario = Column(Float, nullable=False)
+    ativo = Column(Boolean, default=True)
+
     def __repr__(self):
         return f'<Cargo {self.titulo} {self.nivel}>'

@@ -1,5 +1,5 @@
 from app.database import SessionLocal
-from app.models import Departamento, Cargo
+from app.models import Departamento, Cargo, Funcionario
 
 def popular_banco():
     db = SessionLocal()
@@ -24,6 +24,13 @@ def popular_banco():
             Cargo(titulo='Analista RH', nivel='Pleno', sal_min=6000, sal_max=8000),
             Cargo(titulo='Mecânico', nivel='Junior', sal_min=3500, sal_max=4200),
             Cargo(titulo='Mecânico', nivel='Pleno', sal_min=4500, sal_max=6000),
+        })
+
+        db.add_all({
+            Funcionario(nome='Lucas Borba', email='lucasmidas@sistemafibra.org', telefone='(61) 93424-8624', salario='4210.46'),
+            Funcionario(nome='Gabriel Banana', email='gb.antunes@sistemafibra.org', telefone='(61) 97956-3624', salario='3790.78'),
+            Funcionario(nome='Davi Willian', email='daviw185@sistemafibra.org', telefone='(61) 98484-9010', salario='5780.30'),
+            Funcionario(nome='João Martin', email='joaomartin@sistemafibra.org', telefone='(61) 92356-8328', salario='4560.90'),
         })
 
         db.commit()
