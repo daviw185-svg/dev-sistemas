@@ -40,6 +40,22 @@ print(f'Fornecedores criados: {forn1.id}, {forn2.id}, {forn3.id}')
 # produtos
 produtos = [
     Produto(nome="Arduíno UNO Leonardo", preco=75.90, quantidade=30, categoria_id=cat1.id, fornecedor_id=forn1.id),
-    Produto(nome="Camisa Robot's District", preco=56.90, quantidade=40, categoria_id=cat2.id, fornecedor_id=forn2.id),
+    Produto(nome="Camisa Robot's District Sintético", preco=56.90, quantidade=100, categoria_id=cat2.id, fornecedor_id=forn2.id),
     Produto(nome="Energético NOS Energy 450ml", preco=10.90, quantidade=70, categoria_id=cat3.id, fornecedor_id=forn3.id),
+    Produto(nome="Energético NOS Energy 250ml", preco=5.90, quantidade=100, categoria_id=cat3.id, fornecedor_id=forn3.id),
+    Produto(nome="Camisa Robot's District Polo", preco=30.90, quantidade=100, categoria_id=cat2.id, fornecedor_id=forn2.id),
+    Produto(nome="Fita LED RGB 7,5 metros", preco=30.90, quantidade=40, categoria_id=cat1.id, fornecedor_id=forn1.id),
+    Produto(nome="Controle Dualshock 3 PlayStation 3", preco=42.90, quantidade=35, categoria_id=cat1.id, fornecedor_id=forn1.id),
 ]
+
+for p in produtos:
+    db.add(p)
+db.commit()
+print(f'{len(produtos)} produtos inseridos.')
+
+# Listar pra confirmar
+todos = db.query(Produto).all()
+print("\n Produtos no banco")
+for p in todos:
+    print(f' [{p.id}] {p.nome} R${p.preco:.2f} Qtd: {p.quantidade}')
+db.close()

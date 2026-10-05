@@ -10,7 +10,7 @@ class Categoria(Base):
 class Fornecedor(Base):
     __tablename__ = 'fornecedores'
     id = Column(Integer, primary_key=True, index=True)
-    nome = Column(String(80), primary_key=True, index = True)
+    nome = Column(String(80), index = True)
     contato = Column(String(80), nullable=False)
 
 class Produto(Base):
