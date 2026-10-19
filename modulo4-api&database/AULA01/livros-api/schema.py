@@ -3,10 +3,6 @@ from typing import Optional
 from datetime import datetime
 
 # Entrada: POST e PUT (campos obrigatórios)
-class LivroCreate(BaseModel):
-    titulo: str = Field(..., min_length=2, max_length=150)
-    autor: str = Field(..., min_length=2, max_length=150) # gt=0 - Os valores têm que ser maior que zero
-    ano_publicacao: int = Field(0, ge=0) # ge=0 - Maior ou igual a zero
 
 # Entrada: PATCH (todos opcionais)
 class LivroPatch(BaseModel):
