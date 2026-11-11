@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="atv.css">
+</head>
+<body>
+    <header>
+        SISTEMA DE CADASTRO - SENAI
+    </header>
+    <main>
+        <section id="sect">
+            <h2>Entrar no sistema</h2>
+        </section>
+        <section id="cadastro">
+            <form id="form-cadastro" action="&">
+                <div class="campo">
+                    <label for="email">Digite o seu email(institucional):</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="campo">
+                    <label for="senha">Digite a sua senha(mínimo de 8 caracteres):</label>
+                    <input type="password" id="senha" name="senha" required min="8">
+                </div>
+                <div id="remember">
+                    <label><input type="checkbox" name="remember"> Lembrar de mim</label>
+                </div>
+                <div class="enter">
+                    <button id="enterButton">Entrar</button>
+                    <a id="forget" href="&">Esqueci a minha senha</a>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>SENAI SIG DF &copy;2026</footer>
+</body>
+</html>
